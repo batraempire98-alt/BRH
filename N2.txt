@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batra Repair House | PCB, Appliance & Gas Repair — Moonak, Punjab</title>
+<meta name="description" content="Batra Repair House, Moonak (Sangrur, Punjab). PCB repair for AC, fridge, washing machine, microwave, BLDC fan, sewing machine. Appliance & gas chulha repair. Utensils bought & sold. Serving Moonak, Tohana and 50km around. Call 95415 71336.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--ink:#1B2430;
+--ink-soft:#3A4655;
+--paper:#ECEAE4;
+--paper-hi:#F6F4EF;
+--card:#F5F3EE;
+--copper:#B5652D;
+--copper-dark:#8C4C1F;
+--steel:#7C8A99;
+--signal:#4C7A57;
+--line: rgba(27,36,48,0.12);
+--radius: 3px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+margin:0;
+background:var(--paper);
+color:var(--ink);
+font-family:'IBM Plex Sans', sans-serif;
+line-height:1.55;
+-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+font-family:'Space Grotesk', sans-serif;
+margin:0;
+letter-spacing:-0.01em;
+}
+.mono{font-family:'IBM Plex Mono', monospace;}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+.eyebrow{
+font-family:'IBM Plex Mono', monospace;
+font-size:12px;
+letter-spacing:0.14em;
+text-transform:uppercase;
+color:var(--copper-dark);
+display:flex;align-items:center;gap:10px;
+margin-bottom:14px;
+}
+.eyebrow::before{
+content:"";
+width:18px;height:2px;background:var(--copper);
+display:inline-block;
+}
+
+/* ---------- Header ---------- */
+header{
+position:sticky;top:0;z-index:50;
+background:rgba(236,234,228,0.92);
+backdrop-filter:blur(6px);
+border-bottom:1px solid var(--line);
+}
+.nav{
+display:flex;align-items:center;justify-content:space-between;
+padding:16px 0;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+width:38px;height:38px;
+border:2px solid var(--ink);
+border-radius:6px;
+position:relative;
+flex-shrink:0;
+}
+.brand-mark::before,.brand-mark::after{
+content:"";position:absolute;width:5px;height:5px;
+background:var(--copper);border-radius:50%;
+}
+.brand-mark::before{top:5px;left:5px;}
+.brand-mark::after{bottom:5px;right:5px;}
+.brand-name{font-family:'Space Grotesk';font-weight:700;font-size:17px;line-height:1.1;}
+.brand-sub{font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:0.08em;color:var(--ink-soft);text-transform:uppercase;}
+nav.links{display:flex;gap:30px;font-size:14.5px;font-weight:500;}
+nav.links a{opacity:0.8;transition:opacity .15s;}
+nav.links a:hover{opacity:1;color:var(--copper-dark);}
+.btn{
+display:inline-flex;align-items:center;gap:8px;
+padding:11px 20px;
+border-radius:var(--radius);
+font-weight:600;font-size:14px;
+border:1.5px solid var(--ink);
+transition:transform .15s, background .15s, color .15s;
+}
+.btn-solid{background:var(--ink);color:var(--paper-hi);}
+.btn-solid:hover{background:var(--copper-dark);border-color:var(--copper-dark);transform:translateY(-1px);}
+.btn-ghost:hover{background:var(--ink);color:var(--paper-hi);transform:translateY(-1px);}
+.hide-mobile{display:inline-flex;}
+
+/* ---------- Hero ---------- */
+.hero{
+padding:76px 0 60px;
+display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;
+}
+.hero h1{font-size:46px;font-weight:700;line-height:1.08;margin-bottom:20px;}
+.hero h1 em{font-style:normal;color:var(--copper-dark);}
+.hero p.lede{font-size:16.5px;color:var(--ink-soft);max-width:46ch;margin-bottom:28px;}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:28px;}
+.chips{display:flex;flex-wrap:wrap;gap:8px 10px;}
+.chip{
+font-family:'IBM Plex Mono';font-size:11.5px;
+padding:6px 10px;border:1px solid var(--line);border-radius:20px;
+color:var(--ink-soft);background:var(--paper-hi);
+}
+
+/* Signature: coverage schematic */
+.schematic{
+position:relative;
+aspect-ratio:1/1;
+max-width:420px;
+margin:0 auto;
+}
+.schematic svg{width:100%;height:100%;}
+.node-label{
+font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:.05em;
+fill:var(--ink); text-transform:uppercase;
+}
+.node-sub{font-family:'IBM Plex Mono';font-size:9px;fill:var(--ink-soft);}
+
+/* ---------- Section shell ---------- */
+section{padding:74px 0;}
+section.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.section-head{max-width:60ch;margin-bottom:44px;}
+.section-head h2{font-size:32px;margin-bottom:14px;}
+.section-head p{color:var(--ink-soft);font-size:15.5px;}
+
+/* ---------- Services grid ---------- */
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.svc-card{
+background:var(--paper-hi);
+border:1px solid var(--line);
+border-radius:var(--radius);
+padding:24px 20px;
+transition:transform .18s, border-color .18s;
+}
+.svc-card:hover{transform:translateY(-3px);border-color:var(--copper);}
+.svc-icon{font-size:22px;margin-bottom:14px;display:block;}
+.svc-card h3{font-size:17px;margin-bottom:6px;}
+.svc-card .tag{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--copper-dark);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:12px;}
+.svc-card ul{margin:0;padding-left:18px;font-size:13.8px;color:var(--ink-soft);}
+.svc-card li{margin-bottom:4px;}
+
+/* ---------- Coverage ---------- */
+.coverage{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+.loc-card{
+border-left:3px solid var(--copper);
+padding:14px 0 14px 18px;margin-bottom:22px;
+}
+.loc-card h4{font-size:18px;margin-bottom:4px;}
+.loc-card p{margin:0;color:var(--ink-soft);font-size:14.5px;}
+.radius-note{
+font-family:'IBM Plex Mono';font-size:13px;
+background:var(--paper-hi);border:1px dashed var(--steel);
+padding:14px 16px;border-radius:var(--radius);color:var(--ink-soft);
+}
+
+/* ---------- Why us ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.why-card{padding:6px 0;}
+.why-card .num{font-family:'IBM Plex Mono';font-size:12px;color:var(--copper-dark);display:block;margin-bottom:10px;}
+.why-card h3{font-size:16.5px;margin-bottom:8px;}
+.why-card p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+/* ---------- Process ---------- */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.step{position:relative;padding:0 18px 0 0;}
+.step:not(:last-child)::after{
+content:"";position:absolute;top:19px;right:-2px;width:calc(100% - 40px);
+height:1px;background:var(--line);
+}
+.step .dot{
+width:38px;height:38px;border-radius:50%;
+background:var(--ink);color:var(--paper-hi);
+display:flex;align-items:center;justify-content:center;
+font-family:'IBM Plex Mono';font-size:13px;margin-bottom:16px;
+}
+.step h4{font-size:15.5px;margin-bottom:6px;}
+.step p{font-size:13.5px;color:var(--ink-soft);margin:0;}
+
+/* ---------- Contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;}
+.contact-card{
+background:var(--ink);color:var(--paper-hi);
+border-radius:6px;padding:34px;
+}
+.contact-card h3{font-size:22px;margin-bottom:6px;}
+.contact-card p{color:#C7CDD4;font-size:14px;margin-bottom:26px;}
+.contact-line{
+display:flex;align-items:center;justify-content:space-between;
+padding:14px 0;border-top:1px solid rgba(255,255,255,0.14);
+}
+.contact-line:last-child{border-bottom:1px solid rgba(255,255,255,0.14);}
+.contact-line .lbl{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.06em;color:#93A0AC;text-transform:uppercase;}
+.contact-line .val{font-weight:600;font-size:15px;}
+.contact-line a.val:hover{color:var(--copper);}
+.info-block{margin-bottom:26px;}
+.info-block h4{font-size:13px;text-transform:uppercase;letter-spacing:.08em;font-family:'IBM Plex Mono';color:var(--copper-dark);margin-bottom:10px;}
+.info-block p{margin:0 0 4px;font-size:14.5px;color:var(--ink-soft);}
+.yt-row{display:flex;gap:12px;flex-wrap:wrap;}
+.yt-pill{
+display:flex;align-items:center;gap:8px;
+border:1px solid var(--line);border-radius:20px;padding:8px 14px;
+font-size:13px;font-weight:500;background:var(--paper-hi);
+transition:border-color .15s;
+}
+.yt-pill:hover{border-color:var(--copper);}
+
+/* ---------- Footer ---------- */
+footer{padding:40px 0;border-top:1px solid var(--line);}
+.foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.foot-row p{font-size:13px;color:var(--ink-soft);margin:0;font-family:'IBM Plex Mono';}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+.reveal.show{opacity:1;transform:translateY(0);}
+
+@media (prefers-reduced-motion: reduce){
+.reveal{opacity:1;transform:none;transition:none;}
+html{scroll-behavior:auto;}
+}
+
+a:focus-visible, button:focus-visible{outline:2.5px solid var(--copper); outline-offset:2px;}
+
+@media (max-width:920px){
+.hero{grid-template-columns:1fr;padding-top:44px;}
+.hero h1{font-size:34px;}
+.grid-4{grid-template-columns:repeat(2,1fr);}
+.grid-3{grid-template-columns:1fr;}
+.process{grid-template-columns:repeat(2,1fr);row-gap:34px;}
+.step:nth-child(2)::after{display:none;}
+.coverage{grid-template-columns:1fr;}
+.contact-grid{grid-template-columns:1fr;}
+nav.links{display:none;}
+.hide-mobile{display:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="wrap nav">
+<div class="brand">
+<span class="brand-mark" aria-hidden="true"></span>
+<div>
+<div class="brand-name">BATRA REPAIR HOUSE</div>
+<div class="brand-sub">Moonak · Sangrur · Punjab</div>
+</div>
+</div>
+<nav class="links">
+<a href="#services">Services</a>
+<a href="#coverage">Coverage</a>
+<a href="#why-us">Why Us</a>
+<a href="#contact">Contact</a>
+</nav>
+<a class="btn btn-solid hide-mobile" href="tel:+919541571336">Call Now</a>
+</div>
+</header>
+
+<section class="hero">
+<div class="wrap" style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;">
+<div>
+<div class="eyebrow">Moonak, Sangrur — serving Tohana, Fatehabad too</div>
+<h1>PCB, appliance & gas chulha repair. <em>Genuine parts, honest work.</em></h1>
+<p class="lede">Run by technician Amrit Batra out of Moonak, Punjab. We diagnose and repair circuit boards, home appliances and gas appliances, and we buy, sell and repair utensils & household products at the shop.</p>
+<div class="cta-row">
+<a class="btn btn-solid" href="https://wa.me/919541571336?text=Hello%20Batra%20Repair%20House%2C%20I%20need%20a%20repair%20service." target="_blank" rel="noopener">WhatsApp Us</a>
+<a class="btn btn-ghost" href="tel:+919541571336">95415 71336</a>
+</div>
+<div class="chips">
+<span class="chip">AC / Fridge PCB</span>
+<span class="chip">Washing Machine PCB</span>
+<span class="chip">BLDC Fan PCB</span>
+<span class="chip">Sewing Machine PCB</span>
+<span class="chip">Gas Chulha & Geyser</span>
+<span class="chip">Utensils Buy & Sell</span>
+</div>
+</div>
+
+<div class="schematic" aria-label="Service coverage: Moonak and Tohana, 50 km radius">
+<svg viewBox="0 0 400 400" fill="none">
+<circle cx="200" cy="200" r="188" stroke="var(--line)" stroke-width="1" stroke-dasharray="2 6"/>
+<circle cx="150" cy="150" r="100" stroke="var(--steel)" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>
+<circle cx="250" cy="250" r="100" stroke="var(--steel)" stroke-width="1" stroke-dasharray="4 5" opacity="0.7"/>
+<line x1="150" y1="150" x2="250" y2="250" stroke="var(--copper)" stroke-width="2"/>
+<circle cx="150" cy="150" r="14" fill="var(--paper-hi)" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="150" cy="150" r="4" fill="var(--copper)"/>
+<circle cx="250" cy="250" r="14" fill="var(--paper-hi)" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="250" cy="250" r="4" fill="var(--copper)"/>
+<text x="150" y="120" text-anchor="middle" class="node-label">MOONAK</text>
+<text x="150" y="133" text-anchor="middle" class="node-sub">Shop · Sangrur, PB</text>
+<text x="250" y="290" text-anchor="middle" class="node-label">TOHANA</text>
+<text x="250" y="303" text-anchor="middle" class="node-sub">Service · Fatehabad, HR</text>
+<text x="200" y="380" text-anchor="middle" class="node-sub">~50 KM SERVICE RADIUS, BOTH SIDES</text>
+</svg>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="eyebrow">What we fix</div>
+<h2>Repair services</h2>
+<p>PCB-level repair, appliance repair, and gas appliance service — diagnosed and fixed at the shop.</p>
+</div>
+<div class="grid-4">
+<div class="svc-card reveal">
+<span class="svc-icon">🔌</span>
+<span class="tag">PCB Repair</span>
+<h3>Circuit board faults</h3>
+<ul>
+<li>Inverter AC PCB</li>
+<li>Fridge PCB</li>
+<li>Washing machine PCB</li>
+<li>Microwave PCB</li>
+<li>BLDC fan PCB</li>
+<li>Sewing machine PCB</li>
+</ul>
+</div>
+<div class="svc-card reveal">
+<span class="svc-icon">🔧</span>
+<span class="tag">Appliance Repair</span>
+<h3>Small electricals</h3>
+<ul>
+<li>Electric iron</li>
+<li>Mixer & grinder</li>
+<li>Juicer</li>
+<li>Hand blender</li>
+<li>Electric kettle</li>
+<li>Toaster & sandwich maker</li>
+</ul>
+</div>
+<div class="svc-card reveal">
+<span class="svc-icon">🔥</span>
+<span class="tag">Gas Appliances</span>
+<h3>Chulha & geyser</h3>
+<ul>
+<li>1 / 2 / 3 / 4 burner gas chulha</li>
+<li>Hob-top stoves</li>
+<li>Any make of gas chulha</li>
+<li>Gas geyser repair</li>
+</ul>
+</div>
+<div class="svc-card reveal">
+<span class="svc-icon">🍽️</span>
+<span class="tag">Retail</span>
+<h3>Utensils & goods</h3>
+<ul>
+<li>Utensils bought & sold</li>
+<li>Electrical & electronic appliances</li>
+<li>Household products</li>
+<li>Old-for-new exchange enquiries welcome</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="coverage" class="alt">
+<div class="wrap coverage">
+<div>
+<div class="eyebrow reveal">Where we work</div>
+<h2 class="reveal" style="font-size:30px;margin-bottom:24px;">Shop in Moonak. Service in Tohana too.</h2>
+<div class="loc-card reveal">
+<h4>Batra Repair House & Subhash Bartan Store</h4>
+<p>Moonak, District Sangrur, Punjab — our shop, for repair drop-off, pickup and retail.</p>
+</div>
+<div class="loc-card reveal">
+<h4>Tohana service area</h4>
+<p>Tohana, District Fatehabad, Haryana — on-call service for repairs in this area.</p>
+</div>
+<p class="radius-note reveal">We serve roughly 50 km around both Moonak and Tohana. Outside that, call us and we'll let you know what's possible.</p>
+</div>
+<div class="schematic reveal">
+<svg viewBox="0 0 400 400" fill="none">
+<circle cx="150" cy="150" r="150" stroke="var(--steel)" stroke-width="1" stroke-dasharray="4 5" opacity="0.6"/>
+<circle cx="250" cy="250" r="150" stroke="var(--steel)" stroke-width="1" stroke-dasharray="4 5" opacity="0.6"/>
+<line x1="150" y1="150" x2="250" y2="250" stroke="var(--copper)" stroke-width="2"/>
+<circle cx="150" cy="150" r="16" fill="var(--paper-hi)" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="150" cy="150" r="5" fill="var(--copper)"/>
+<circle cx="250" cy="250" r="16" fill="var(--paper-hi)" stroke="var(--ink)" stroke-width="2"/>
+<circle cx="250" cy="250" r="5" fill="var(--copper)"/>
+<text x="150" y="115" text-anchor="middle" class="node-label">MOONAK, PB</text>
+<text x="250" y="295" text-anchor="middle" class="node-label">TOHANA, HR</text>
+</svg>
+</div>
+</div>
+</section>
+
+<section id="why-us">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="eyebrow">Why call us</div>
+<h2>Straightforward, local, hands-on</h2>
+</div>
+<div class="grid-3">
+<div class="why-card reveal">
+<span class="num">01</span>
+<h3>One technician, direct contact</h3>
+<p>You speak to Amrit Batra directly on call or WhatsApp — no call centre in between.</p>
+</div>
+<div class="why-card reveal">
+<span class="num">02</span>
+<h3>Genuine parts</h3>
+<p>We repair with genuine components rather than cheap stand-ins, as the shop name promises.</p>
+</div>
+<div class="why-card reveal">
+<span class="num">03</span>
+<h3>PCB-level diagnosis</h3>
+<p>Faults are traced to the actual failed component on the board, not just guessed at.</p>
+</div>
+<div class="why-card reveal">
+<span class="num">04</span>
+<h3>One shop, many jobs</h3>
+<p>PCB repair, small appliances, gas chulha and utensils — sorted in one visit.</p>
+</div>
+<div class="why-card reveal">
+<span class="num">05</span>
+<h3>Local & on-call</h3>
+<p>Based in Moonak, also covering Tohana and roughly 50 km around both.</p>
+</div>
+<div class="why-card reveal">
+<span class="num">06</span>
+<h3>Fast turnaround</h3>
+<p>Quick diagnosis and repair so your appliance is back in use with minimum delay.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt">
+<div class="wrap">
+<div class="section-head reveal">
+<div class="eyebrow">How a repair goes</div>
+<h2>Our process</h2>
+</div>
+<div class="process">
+<div class="step reveal">
+<div class="dot">1</div>
+<h4>Tell us the fault</h4>
+<p>Call or WhatsApp with the appliance and the problem you're seeing.</p>
+</div>
+<div class="step reveal">
+<div class="dot">2</div>
+<h4>Diagnosis</h4>
+<p>At the shop or on-site, we trace the fault to its actual cause.</p>
+</div>
+<div class="step reveal">
+<div class="dot">3</div>
+<h4>Repair with genuine parts</h4>
+<p>We fix or replace using genuine parts, and tell you the cost upfront.</p>
+</div>
+<div class="step reveal">
+<div class="dot">4</div>
+<h4>Test & hand back</h4>
+<p>We test it's working properly before it goes back to you.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap contact-grid">
+<div class="contact-card reveal">
+<h3>Get in touch</h3>
+<p>Fastest response is on WhatsApp or a direct call.</p>
+<div class="contact-line">
+<span class="lbl">Call / WhatsApp</span>
+<a class="val" href="tel:+919541571336">95415 71336</a>
+</div>
+<div class="contact-line">
+<span class="lbl">Business email</span>
+<a class="val" href="mailto:batraempire98@gmail.com">batraempire98@gmail.com</a>
+</div>
+<div class="contact-line">
+<span class="lbl">Shop</span>
+<span class="val">Batra Repair House, Moonak, Sangrur, Punjab</span>
+</div>
+<div class="contact-line">
+<span class="lbl">Google reviews</span>
+<a class="val" href="https://g.page/r/CYpU4DtxKJanEBI/review" target="_blank" rel="noopener">Rate us on Google →</a>
+</div>
+<div style="display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;">
+<a class="btn btn-solid" style="border-color:var(--copper);background:var(--copper);" href="https://wa.me/919541571336?text=Hello%20Batra%20Repair%20House%2C%20I%20need%20a%20repair%20service." target="_blank" rel="noopener">WhatsApp Now</a>
+<a class="btn btn-ghost" style="border-color:var(--paper-hi);color:var(--paper-hi);" href="tel:+919541571336">Call 95415 71336</a>
+</div>
+</div>
+
+<div>
+<div class="info-block reveal">
+<h4>Owner</h4>
+<p>Amrit Batra, s/o Sh. Virender Kumar (Vicky Batra)</p>
+</div>
+<div class="info-block reveal">
+<h4>On YouTube</h4>
+<div class="yt-row">
+<a class="yt-pill" href="https://youtube.com/@batraempire?si=DOblmSSgqbZzLPVv" target="_blank" rel="noopener">▶ Batra Empire (Business)</a>
+<a class="yt-pill" href="https://youtube.com/@amritbatra954?si=SAfO9etfTgwIsI-G" target="_blank" rel="noopener">▶ Amrit Batra (Personal)</a>
+</div>
+</div>
+<div class="info-block reveal">
+<h4>Areas served</h4>
+<p>Moonak & around (Sangrur, Punjab)</p>
+<p>Tohana & around (Fatehabad, Haryana)</p>
+<p>Roughly 50 km radius of both locations</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap foot-row">
+<div class="brand">
+<span class="brand-mark" aria-hidden="true"></span>
+<div>
+<div class="brand-name" style="font-size:15px;">BATRA REPAIR HOUSE</div>
+<div class="brand-sub">Moonak, Sangrur, Punjab</div>
+</div>
+</div>
+<p>© 2026 Batra Repair House · 95415 71336</p>
+</div>
+</footer>
+
+<script>
+const items = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+items.forEach(i => io.observe(i));
+</script>
+
+</body>
+</html>
